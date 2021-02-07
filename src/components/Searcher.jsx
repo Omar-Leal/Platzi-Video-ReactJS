@@ -2,6 +2,9 @@ import React from 'react'
 
 import '../assets/styles/components/Searcher.scss'
 
+
+import '../assets/styles/components/Searcher.scss'
+
 const Searcher = () => (
 
   <section className="main">
