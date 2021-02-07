@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --env development"
+    "start": "webpack serve --mode development --env development",
+    "server": "json-server initalState.json"
   },
   "keywords": [],
   "author": "Omar Leal <omarenriquelealr@>",
@@ -26,6 +27,7 @@
     "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^5.0.0",
     "mini-css-extract-plugin": "^1.3.5",
