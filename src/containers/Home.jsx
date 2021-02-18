@@ -11,7 +11,7 @@ const API = 'http://localhost:3000/initalState'
 
 import '../assets/styles/App.scss'
 
-const App = () => {
+const Home = () => {
  const  videos = useInitialState(API);
 
    const renderList = (video = []) => {
@@ -58,4 +58,4 @@ const App = () => {
 };
 
 
-export default App;
+export default Home;

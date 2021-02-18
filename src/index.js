@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 //Container
-import App from './containers/App'
+import App from './routes/App'
 
 const container = document.getElementById('container')
 
