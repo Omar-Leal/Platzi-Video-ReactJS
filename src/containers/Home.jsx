@@ -6,6 +6,7 @@ import Carousel from '../components/Carousel'
 import Item from '../components/Item'
 import Footer from '../components/Footer'
 import useInitialState from '../Hooks/useInitialState'
+import Loader from '../components/Loader'
 
 const API = 'http://localhost:3000/initalState'
 
@@ -24,7 +25,7 @@ const Home = () => {
      )
    }     
   
-    return videos.length === 0 ? <h1>Loading...</h1> : (
+    return videos.length === 0 ? <h1><Loader /></h1> : (
     <div className="App">
       <Header />
       <Searcher />
