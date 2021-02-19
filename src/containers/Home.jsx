@@ -1,33 +1,35 @@
 import React, { useEffect, useState } from 'react'
+import{ connect } from 'react-redux' 
 import Searcher from '../components/Searcher'
 import Categories from '../components/Categories'
 import Carousel from '../components/Carousel'
 import Item from '../components/Item'
-import useInitialState from '../Hooks/useInitialState'
+// import useInitialState from '../Hooks/useInitialState'
 import Loader from '../components/Loader'
 
-const API = 'http://localhost:3000/initalState'
+
+//const API = 'http://localhost:3000/initalState'
 
 import '../assets/styles/App.scss'
 
-const Home = () => {
- const  videos = useInitialState(API);
+const Home = ({ myList, trends, originals}) => {
+ //const  videos = useInitialState(API);
 
-   const renderList = (video = []) => {
-     return(
+   const renderList = (video) => {
+     return (
         <>
         {video.map((item) =>(
           <Item key={item.id} {...item} />
         ))}
         </>
      )
-   }     
+   }   
   
-    return videos.length === 0 ? <h1><Loader /></h1> : (
+    return /* videos.length === 0 ? <h1><Loader /></h1> : */  (
     <React.Fragment>
       
       <Searcher />
-        {videos.mylist.length > 0 &&
+        {myList.length > 0 &&
             <Categories title="My list">
               <Carousel>
                 <Item />                    
@@ -37,14 +39,14 @@ const Home = () => {
 
       <Categories title="Trends">
         <Carousel>
-          {renderList(videos.trends)}
+          {renderList(trends)}
 
         </Carousel>
       </Categories>
 
       <Categories title="Originals">
         <Carousel>
-          {renderList(videos.originals)}
+          {renderList(originals)}
         </Carousel>
       </Categories>
 
@@ -56,5 +58,14 @@ const Home = () => {
 
 };
 
+//creating a connector 
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    myList: state.myList,
+    trends: state.trends,
+    originals: state.originals
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);
