@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
 import Searcher from '../components/Searcher'
 import Categories from '../components/Categories'
 import Carousel from '../components/Carousel'
 import Item from '../components/Item'
-import Footer from '../components/Footer'
 import useInitialState from '../Hooks/useInitialState'
 import Loader from '../components/Loader'
 
@@ -26,8 +24,8 @@ const Home = () => {
    }     
   
     return videos.length === 0 ? <h1><Loader /></h1> : (
-    <div className="App">
-      <Header />
+    <React.Fragment>
+      
       <Searcher />
         {videos.mylist.length > 0 &&
             <Categories title="My list">
@@ -51,8 +49,8 @@ const Home = () => {
       </Categories>
 
       
-      <Footer />
-    </div>
+      
+    </React.Fragment>
   )
 
 
