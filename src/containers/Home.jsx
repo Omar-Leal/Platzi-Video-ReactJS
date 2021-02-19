@@ -18,21 +18,21 @@ const Home = ({ myList, trends, originals}) => {
    const renderList = (video) => {
      return (
         <>
-        {video.map((item) =>(
-          <Item key={item.id} {...item} />
+        {video.map((item, i) =>(
+          <Item key={i} {...item} />
         ))}
         </>
      )
    }   
   
     return /* videos.length === 0 ? <h1><Loader /></h1> : */  (
-    <React.Fragment>
+    <div>
       
       <Searcher />
         {myList.length > 0 &&
             <Categories title="My list">
               <Carousel>
-                <Item />                    
+              {renderList(myList)}                  
               </Carousel>
             </Categories>    
         }
@@ -52,7 +52,7 @@ const Home = ({ myList, trends, originals}) => {
 
       
       
-    </React.Fragment>
+    </div>
   )
 
 
