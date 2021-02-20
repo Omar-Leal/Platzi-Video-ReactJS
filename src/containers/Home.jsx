@@ -4,7 +4,6 @@ import Searcher from '../components/Searcher'
 import Categories from '../components/Categories'
 import Carousel from '../components/Carousel'
 import Item from '../components/Item'
-// import useInitialState from '../Hooks/useInitialState'
 import Loader from '../components/Loader'
 
 
@@ -23,16 +22,23 @@ const Home = ({ myList, trends, originals}) => {
         ))}
         </>
      )
-   }   
-  
-    return /* videos.length === 0 ? <h1><Loader /></h1> : */  (
-    <div>
-      
+   }    
+    
+
+    return trends === 0 ? <h1><Loader /></h1> :   (
+    
+    <div>           
       <Searcher />
         {myList.length > 0 &&
             <Categories title="My list">
               <Carousel>
-              {renderList(myList)}                  
+              {myList.map((item, idx) => (
+                <Item 
+                key={idx} 
+                {...item} 
+                isList
+                />
+              ))}                
               </Carousel>
             </Categories>    
         }

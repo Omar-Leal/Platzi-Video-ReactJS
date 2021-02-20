@@ -1,19 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setFavorite } from '../accions'
+import { setFavorite, deleteFavorite } from '../accions'
 import PropTypes from 'prop-types'
 import '../assets/styles/components/Item.scss'
 import PlayIcon from '../assets/static/play-icon.png'
 import PlusIcon from '../assets/static/plus-icon.png'
+import removeIcon from '../assets/static/remove-icon.png'
 
 const Item = (props) => {
 
-  const {cover, title, year, contentRating, duration} = props;
+  const { id, cover, title, year, contentRating, duration, isList} = props;
 
   const handleSetFavorite = () => {
     props.setFavorite({
-      cover, title, year, contentRating, duration
+      id, cover, title, year, contentRating, duration
      })
+  }
+
+  const handleDeleteFavorite = (item__id) => {
+    props.deleteFavorite(item__id)
   }
 
   return (
@@ -22,12 +27,23 @@ const Item = (props) => {
       <div className="carousel-item__details">
           <div>
               <img className="carousel-item__details--img" src={PlayIcon} alt="Play Icon"/> 
+              {isList === true ? 
+                <img
+                onClick={() => handleDeleteFavorite(id)}
+                src={removeIcon}
+                className="carousel-item__details--img"
+                /> : 
+                
+                <img 
+                onClick={handleSetFavorite}
+                className="carousel-item__details--img" 
+                src={PlusIcon}               
+                alt="Plus Icon" /> 
 
-              <img 
-              onClick={handleSetFavorite}
-              className="carousel-item__details--img" 
-              src={PlusIcon}               
-              alt="Plus Icon" /> 
+
+              }
+
+              
 
           </div>
           <p className="carousel-item__details--title">{title}</p>
@@ -50,7 +66,7 @@ Item.propTypes = {
 
 const mapDispatchToProps = {
   setFavorite,
-
+  deleteFavorite
 };
 
 
