@@ -7,20 +7,22 @@ import user from '../assets/static/user-icon.png'
 const Header = () => (
   
   <header className="header">
-    <Link to='/'>
-        <img className="header__img" src={logo} alt="Platzi Video" />
-    </Link>
-    <div className="header__menu">
-        <div className="header__menu--profile">
-          <img src={user} alt="user__foto" />
-          <p>Perfil</p>
-        </div>
-        <ul>
-          <li><Link to='/'>Iniciar Sesión</Link></li>
-          <li><Link to='/'>Cerrar Sesión</Link></li>
-        </ul>
+  <figure className="header_logo">
+    <img src={logo} alt="PLatzi Video Logo" />
+  </figure>
+
+  <div className="header_menu">
+    <div className="header_menu--profile">
+      <i className="fas fa-user-circle"></i>
+      <p>Profile</p>
     </div>
-  </header>
+    <ul>
+      <li><a href="#">Account</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </div>
+ 
+</header>
   
 );
 

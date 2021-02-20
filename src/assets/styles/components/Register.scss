@@ -1,27 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+.header {
+  background-color: #21c08b;
+}
+
+.header__logo {
+  width: 250px;
+}
+
+.header__logo--img {
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* register Styles */
+
 .register {
-  background-image: linear-gradient(#21c08b, #8f57fd);
+  background: linear-gradient(#21c08b, #ab88ff);
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
-  padding: 0px 30px;
-  min-height: calc(
-    100vh - 200px
-  ); /* El ancho será igual al tamaño de todo el height menos 200px (100px del header + 100px del footer) */
+  flex-direction: column;
+  padding: 30px 0px;
+  min-height: calc(100vh - 200px);
 }
 
 .register__container {
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid white;
   border-radius: 40px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  min-height: 600px;
   padding: 60px 68px 40px;
-  width: 300px;
+  min-height: 700px;
+  width: 390px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .register__container--form {
@@ -29,13 +53,110 @@
   flex-direction: column;
 }
 
-.register__container a {
+.register__container--form label {
+  font-size: 14px;
+}
+
+.register__container--remember {
   color: white;
-  font-size: 16px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.register__container--remember a {
+  color: white;
+  font-size: 14px;
   text-decoration: none;
 }
 
-.register__container a:hover {
+.register__container--remember a:hover {
+  text-decoration: underline;
+}
+
+.register__container--socialMedia > div {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.register__container--register {
+  font-size: 14px;
+  text-align: center;
+}
+
+.register__container--register a {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.register__container--register a:hover {
+  text-decoration: underline;
+}
+.fab {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.input {
+  background-color: transparent;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid white;
+  border-left: 0px;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 0px 18px;
+  height: 50px;
+}
+
+.input:focus {
+  outline: none;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+::placeholder {
+  color: white;
+}
+
+.buttom {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  height: 45px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+}
+
+.buttom:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ab88ff;
+  padding: 10px 15px;
+  color: white;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer a:hover {
   text-decoration: underline;
 }
