@@ -10,7 +10,6 @@ const Login = (props) => {
     email: '',
   });
 
-/********** */
   const handleInput = event => {
     setForm({
       ...form,
@@ -19,7 +18,6 @@ const Login = (props) => {
   }
 
 
-/** */
   const handleSubmit = event => {
     event.preventDefault();
     props.loginRequest()

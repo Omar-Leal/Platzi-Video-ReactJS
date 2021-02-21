@@ -9,7 +9,7 @@ import App from './routes/App'
 const container = document.getElementById('container')
 
 const initialState = {
-    "user": {},
+    "User": {},
     "playing": {},
     "myList": [],
     "trends": [
