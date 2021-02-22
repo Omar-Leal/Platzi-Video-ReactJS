@@ -32,13 +32,13 @@ const Home = ({ myList, trends, originals}) => {
         {myList.length > 0 &&
             <Categories title="My list">
               <Carousel>
-              {myList.map((item, idx) => (
-                <Item 
-                key={idx} 
-                {...item} 
-                isList
-                />
-              ))}                
+                      {myList.map((item, idx) => (
+                        <Item 
+                        key={idx} 
+                        {...item} 
+                        isList
+                        />
+                      ))}                
               </Carousel>
             </Categories>    
         }
@@ -46,7 +46,6 @@ const Home = ({ myList, trends, originals}) => {
       <Categories title="Trends">
         <Carousel>
           {renderList(trends)}
-
         </Carousel>
       </Categories>
 
