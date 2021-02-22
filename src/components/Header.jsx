@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import gravatar from '../utils/gravatar'
+import classNames from 'classnames'
 import '../assets/styles/components/Header.scss'
 import logo from '../assets/static/logo-platzi-video-BW2.png'
 import { logoutRequest } from '../accions'
@@ -9,7 +10,7 @@ import { logoutRequest } from '../accions'
 
 const Header = (props) => {  
 
-  const { User } = props;
+  const { User, isLogin, isRegister, isHome } = props;
 
   const hasUser = Object.keys(User).length > 0;
 
@@ -20,9 +21,14 @@ const Header = (props) => {
 
   }
 
+  const headerClass = classNames('header', {
+    isLogin,
+    isRegister,
+    isHome,    
+  })
 
   return (
-    <header className="header">
+    <header className={headerClass}>
           <figure className="header_logo">
             <Link to="/"><img src={logo} alt="PLatzi Video Logo" /></Link>
           </figure>

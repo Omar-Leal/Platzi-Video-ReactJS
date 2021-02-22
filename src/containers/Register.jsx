@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../assets/styles/components/Register.scss'
 import { registerRequest } from  '../accions'
+import Header from '../components/Header'
+
 
 const Register = (props) => {
 
@@ -26,8 +28,10 @@ const Register = (props) => {
   } 
  
   return (
-    <section className="register">
-    <section className="register__container">
+    <React.Fragment>
+      <Header isRegister />
+      <section className="register">
+      <section className="register__container">
       <h2>Registrate aquí</h2>
       <form onSubmit={handleSubmit} className="register__container--form">
         <input 
@@ -71,6 +75,7 @@ const Register = (props) => {
     </section>
    </section>
 
+    </React.Fragment>
   )
 }
 

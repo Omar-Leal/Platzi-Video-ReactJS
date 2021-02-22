@@ -5,6 +5,7 @@ import Categories from '../components/Categories'
 import Carousel from '../components/Carousel'
 import Item from '../components/Item'
 import Loader from '../components/Loader'
+import Header from '../components/Header'
 
 
 //const API = 'http://localhost:3000/initalState'
@@ -27,7 +28,8 @@ const Home = ({ myList, trends, originals}) => {
 
     return trends === 0 ? <h1><Loader /></h1> :   (
     
-    <div>           
+    <div>   
+      <Header isHome />        
       <Searcher />
         {myList.length > 0 &&
             <Categories title="My list">

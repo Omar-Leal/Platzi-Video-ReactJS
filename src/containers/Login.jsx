@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../assets/styles/components/Login.scss'
 import { loginRequest } from '../accions'
+import Header from '../components/Header'
 
 const Login = (props) => {
 
@@ -27,34 +28,37 @@ const Login = (props) => {
 
 
   return (
-    <section className="login">
-    <section className="login__container">
-      <h2>Inicio de sesión</h2>
-      <form onSubmit={handleSubmit} className="login__container--form">
+    
+    <React.Fragment>
+      <Header isLogin />
+      <section className="login">
+      <section className="login__container">
+         <h2>Inicio de sesión</h2>
+         <form onSubmit={handleSubmit} className="login__container--form">
 
-          <input 
-          name="email"
-          className="input" 
-          type="text" 
-          placeholder="Correo" 
-          onChange={handleInput}
-          />
+              <input 
+              name="email"
+              className="input" 
+              type="text" 
+              placeholder="Correo" 
+              onChange={handleInput}
+              />
 
-          <input 
-          name="password"
-          className="input" 
-          type="password" 
-          placeholder="Contraseña"
-          onChange={handleInput}
-          />
+              <input 
+              name="password"
+              className="input" 
+              type="password" 
+              placeholder="Contraseña"
+              onChange={handleInput}
+              />
 
-          <button className="buttom">Iniciar Sesión</button>
-        <div className="login__container--remember">
-            <label >
-              <input type="checkbox" id="box1" value="checked" />Recuerdame
-            </label>
-          <Link to="/">I forgot my password</Link>  
-        </div>
+             <button className="buttom">Iniciar Sesión</button>
+             <div className="login__container--remember">
+                  <label >
+                    <input type="checkbox" id="box1" value="checked" />Recuerdame
+                  </label>
+                <Link to="/">I forgot my password</Link>  
+             </div>
       </form>
 
       <section className="login__container--socialMedia">
@@ -66,6 +70,7 @@ const Login = (props) => {
           </p>
     </section>
     </section>
+    </React.Fragment>
   )
  
 
